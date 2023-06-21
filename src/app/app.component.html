@@ -1,11 +1,18 @@
-<div class="container h-100 my-piano">
-  <div class="list-group w-100">
-    <a (click)="aplicarSonido(1)" data-sound="1" class="p-4 list-group-item list-group-item-action" style="background-color: red;" ></a>
-    <a (click)="aplicarSonido(2)" data-sound="2" class="p-4 list-group-item list-group-item-action" style="background-color: orange;" ></a>
-    <a (click)="aplicarSonido(3)" data-sound="3" class="p-4 list-group-item list-group-item-action" style="background-color: yellow;" ></a>
-    <a (click)="aplicarSonido(4)" data-sound="4" class="p-4 list-group-item list-group-item-action" style="background-color: greenyellow;" ></a>
-    <a (click)="aplicarSonido(5)" data-sound="5" class="p-4 list-group-item list-group-item-action" style="background-color: green;" ></a>
-    <a (click)="aplicarSonido(6)" data-sound="6" class="p-4 list-group-item list-group-item-action" style="background-color: blue;" ></a>
-    <a (click)="aplicarSonido(7)" data-sound="7" class="p-4 list-group-item list-group-item-action" style="background-color: purple;" ></a>
+<div class="container my-piano">
+
+  <div class="row w-100 d-flex justify-content-center jumbotron">
+    <button class="btn btn-success" type="button" (click)="makeToggleDice()">
+      Toggle Dice
+    </button>
   </div>
+
+  <div class="alert alert-success" *ngIf="winner">
+    You have won
+  </div>
+
+  <div class="row img-cont">
+    <img class="img" [src]="dadoIzquierdo" alt="">
+    <img class="img" [src]="dadoDerecho" alt="">
+  </div>
+
 </div>

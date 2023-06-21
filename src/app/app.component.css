@@ -1,15 +1,28 @@
 .my-piano{
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.list-group-item{
-    cursor: pointer;
-    transition: all .25s
+
+.jumbotron{
+    margin: 3em 0;
 }
 
-.list-group-item:active{
-    opacity: 0.7;
+
+.img-cont{
+    width: 100%;
+    max-width: 40em;
+}
+
+.img{
+    width: 45%;
+    object-fit: contain;
+    background-color: red;
+    margin: 1em;
+    padding: 0;
+    border-radius: 3em;
+    border: .5em solid black;
 }

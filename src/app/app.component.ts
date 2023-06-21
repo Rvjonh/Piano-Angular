@@ -6,31 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  constructor (){
-    document.addEventListener('keydown', (e)=>{
-      const key = parseInt(e.key)
-      if (key > 0 && key < 8){
-        this.makeClickHappen(key)
-      }
-    })
-  }
+  dadoIzquierdo = "../assets/dados/dice1.png";
+  dadoDerecho = "../assets/dados/dice4.png";
   
-  aplicarSonido(numero:number):void{
-    const audio = new Audio();
-    audio.src = '../assets/sonidos/note'+numero+'.wav';
-    audio.load();
-    audio.play();
-    console.log(`note${numero}`)
-  }
+  winner = false;
 
-  makeClickHappen(numero:number):void{
-    const btn = document.querySelector(`a[data-sound='${numero}']`)
-    let evt = new MouseEvent('click', {
-            bubbles: true,
-            cancelable: true,
-            view: window
-        });
-    btn?.dispatchEvent(evt);
+  makeToggleDice(){
+    const dice1 = Math.round(Math.random()*5 + 1)
+    const dice2 = Math.round(Math.random()*5 + 1)
+    this.dadoIzquierdo = `../assets/dados/dice${dice1}.png`
+    this.dadoDerecho = `../assets/dados/dice${dice2}.png`
+
+    if (dice1 === dice2){
+      this.winner = true
+    }else{
+      this.winner = false
+    }
   }
 }
