@@ -1,18 +1,11 @@
-<div class="container my-piano">
+<div class="my-wrap">
 
-  <div class="row w-100 d-flex justify-content-center jumbotron">
-    <button class="btn btn-success" type="button" (click)="makeToggleDice()">
-      Toggle Dice
-    </button>
-  </div>
+  <app-navbar class="w-100" />
 
-  <div class="alert alert-success" *ngIf="winner">
-    You have won
-  </div>
-
-  <div class="row img-cont">
-    <img class="img" [src]="dadoIzquierdo" alt="">
-    <img class="img" [src]="dadoDerecho" alt="">
-  </div>
+  <main class="main">
+    <div class="bg-todo"></div>
+    <h1>To do's para el proyecto</h1>
+    <app-tareas class="w-100"/>
+  </main>
 
 </div>

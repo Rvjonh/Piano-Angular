@@ -1,0 +1,8 @@
+.list-group-item-secondary{
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.list-group-item-secondary:hover{
+    filter: brightness(1.22);
+}

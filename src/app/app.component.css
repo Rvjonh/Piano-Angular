@@ -1,4 +1,4 @@
-.my-piano{
+.my-wrap{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -6,23 +6,28 @@
     align-items: center;
 }
 
-
-.jumbotron{
-    margin: 3em 0;
-}
-
-
-.img-cont{
+.main{
+    position: relative;
+    display: flex;
+    flex: 1;
     width: 100%;
-    max-width: 40em;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+
 }
 
-.img{
-    width: 45%;
-    object-fit: contain;
-    background-color: red;
-    margin: 1em;
-    padding: 0;
-    border-radius: 3em;
-    border: .5em solid black;
+.bg-todo{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: url("../assets/todo/bg.jfif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    flex: 1;
+    width: 100%;
 }
