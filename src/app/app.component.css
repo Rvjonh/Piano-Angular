@@ -1,3 +1,15 @@
-.title{
-    color: red;
+.my-piano{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-group-item{
+    cursor: pointer;
+    transition: all .25s
+}
+
+.list-group-item:active{
+    opacity: 0.7;
 }

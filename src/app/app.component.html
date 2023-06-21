@@ -1,49 +1,11 @@
-<div class="container">
-  <h1>Hola mundo</h1>
-  <div class="row">
-    <h2>lista de estudiantes</h2>
-
-    <ng-container *ngIf="listEstudiante.length > 0">
-      <button class="btn btn-primary ml-auto" (click)="toggle()">Toggle</button>
-    </ng-container>
-  </div>
-  <br>
-  <table class="table" *ngIf="mostrar && listEstudiante.length > 0">
-    <thead>
-      <th>Nro</th>
-      <th>Nombre</th>
-      <th>Estado</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let estudiante of listEstudiante; let i = index" [ngSwitch]="estudiante.estado">
-        <td [ngStyle]="{ 'background-color': estudiante.estado === 'Excelente' ? '#a0e1a0' : '' }">
-          <span>{{ i + 1 }}</span>
-        </td>
-        <td [ngStyle]="{ 'background-color': estudiante.estado === 'Excelente' ? '#a0e1a0' : '' }">
-          <span>{{ estudiante.name }}</span>
-        </td>
-        <td [ngStyle]="{ 'background-color': estudiante.estado === 'Excelente' ? '#a0e1a0' : '' }">
-          
-          <span class="badge bg-success"
-            *ngSwitchCase="'Excelente'">
-            {{ estudiante.estado }}
-          </span>
-
-          <span class="badge bg-secondary"
-            *ngSwitchCase="'Pesimo'">
-            {{ estudiante.estado }}
-          </span>
-
-          <span class="badge bg-danger"
-            *ngSwitchCase="'Libre'">
-            {{ estudiante.estado }}
-          </span>
-          
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="row" *ngIf="listEstudiante.length === 0">
-    <h3>No hay registros encontrados</h3>
+<div class="container h-100 my-piano">
+  <div class="list-group w-100">
+    <a (click)="aplicarSonido(1)" data-sound="1" class="p-4 list-group-item list-group-item-action" style="background-color: red;" ></a>
+    <a (click)="aplicarSonido(2)" data-sound="2" class="p-4 list-group-item list-group-item-action" style="background-color: orange;" ></a>
+    <a (click)="aplicarSonido(3)" data-sound="3" class="p-4 list-group-item list-group-item-action" style="background-color: yellow;" ></a>
+    <a (click)="aplicarSonido(4)" data-sound="4" class="p-4 list-group-item list-group-item-action" style="background-color: greenyellow;" ></a>
+    <a (click)="aplicarSonido(5)" data-sound="5" class="p-4 list-group-item list-group-item-action" style="background-color: green;" ></a>
+    <a (click)="aplicarSonido(6)" data-sound="6" class="p-4 list-group-item list-group-item-action" style="background-color: blue;" ></a>
+    <a (click)="aplicarSonido(7)" data-sound="7" class="p-4 list-group-item list-group-item-action" style="background-color: purple;" ></a>
   </div>
 </div>

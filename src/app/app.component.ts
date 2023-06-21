@@ -6,16 +6,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  listEstudiante: any[] =[
-    {name:"Carlos", estado:"Excelente"},
-    {name:"Alberto", estado:"Libre"},
-    {name:"Daniela", estado:"Excelente"},
-    {name:"Maria", estado:"Pesimo"},
-    {name:"Fernando", estado:"Libre"},
-  ]
-  mostrar = true
 
-  toggle(){
-    this.mostrar = !this.mostrar
+  constructor (){
+    document.addEventListener('keydown', (e)=>{
+      const key = parseInt(e.key)
+      if (key > 0 && key < 8){
+        this.makeClickHappen(key)
+      }
+    })
+  }
+  
+  aplicarSonido(numero:number):void{
+    const audio = new Audio();
+    audio.src = '../assets/sonidos/note'+numero+'.wav';
+    audio.load();
+    audio.play();
+    console.log(`note${numero}`)
+  }
+
+  makeClickHappen(numero:number):void{
+    const btn = document.querySelector(`a[data-sound='${numero}']`)
+    let evt = new MouseEvent('click', {
+            bubbles: true,
+            cancelable: true,
+            view: window
+        });
+    btn?.dispatchEvent(evt);
   }
 }
